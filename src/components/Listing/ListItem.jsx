@@ -86,13 +86,13 @@ export default class ListItem extends Component {
         <div className="featuredImageContainer">
           <div className="orangeMask"></div>
           <img src={Static} alt="static" className="static" />
-          <Img fluid={node.data.featured_image.localFile.childImageSharp.fluid} />
+          {node.data.featured_image && <Img fluid={node.data.featured_image.localFile.childImageSharp.fluid} />}
         </div>
         <Headline>
           {node.data.date} —{" "}
           {categories && <Categories categories={categories} />}
         </Headline>
-        <StyledLink to={node.uid}>{node.data.title.text} <span className="subtitle">{node.data.subtitle.text}</span></StyledLink>
+        <StyledLink to={node.uid}>{node.data.title.text} {node.data.subtitle && <span className="subtitle">{node.data.subtitle.text}</span>}</StyledLink>
         <p className="authorSection">By {writer}</p>
         {node.data.description}
       </Item>

@@ -1,20 +1,20 @@
 /* eslint no-unused-expressions: 0 */
 /* eslint react/destructuring-assignment: 0 */
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import { Global, css } from '@emotion/core'
-import { ThemeProvider } from 'emotion-theming'
-import '@reach/skip-nav/styles.css'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import { Global, css } from "@emotion/core";
+import { ThemeProvider } from "emotion-theming";
+import "@reach/skip-nav/styles.css";
 
-import Footer from './Footer'
-import SEO from './SEO'
-import SkipNavLink from './SkipNavLink'
-import { theme, reset } from '../styles'
+import Footer from "./Footer";
+import SEO from "./SEO";
+import SkipNavLink from "./SkipNavLink";
+import { theme, reset } from "../styles";
 
-import 'typeface-lora'
-import 'typeface-source-sans-pro'
+import "typeface-lora";
+import "typeface-source-sans-pro";
 
 const globalStyle = css`
   ${reset}
@@ -27,7 +27,7 @@ const globalStyle = css`
   }
   body {
     color: ${theme.colors.greyDarker};
-    background-color: ${theme.colors.bg};
+    background-color: ${theme.colors.baseOrange};
   }
   ::selection {
     color: ${theme.colors.bg};
@@ -69,7 +69,7 @@ const globalStyle = css`
       font-size: 0.563rem !important;
     }
   }
-`
+`;
 
 const PureLayout = ({ children, data, customSEO }) => (
   <ThemeProvider theme={theme}>
@@ -78,12 +78,12 @@ const PureLayout = ({ children, data, customSEO }) => (
       <SkipNavLink />
       {!customSEO && <SEO />}
       {children}
-      <Footer>
+      {/* <Footer>
         <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
-      </Footer>
+      </Footer> */}
     </>
   </ThemeProvider>
-)
+);
 
 class Layout extends Component {
   render() {
@@ -106,22 +106,22 @@ class Layout extends Component {
           </PureLayout>
         )}
       />
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
-}
+};
 
 PureLayout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   data: PropTypes.object.isRequired,
   customSEO: PropTypes.bool,
-}
+};
 
 PureLayout.defaultProps = {
   customSEO: false,
-}
+};

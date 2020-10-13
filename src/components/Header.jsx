@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import Logo from "../images/SUBTITLE.png";
 
 const StyledHeader = styled.nav`
-  padding-bottom: 2rem;
+  position: absolute;
+    left: 2rem;
+    top: 2rem;
+    width: 100px;
+    z-index: 10;
   a {
     color: ${(props) => (props.invert ? props.theme.colors.greyLight : props.theme.colors.greyDark)};
     font-weight: 400;
@@ -20,7 +25,7 @@ class Header extends Component {
     return (
       <StyledHeader invert={invert}>
         <Link to="/" aria-label="Back to Home">
-          Frontend Developer
+          <img src={Logo} alt="subtitle logo" />
         </Link>
       </StyledHeader>
     )

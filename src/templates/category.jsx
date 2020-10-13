@@ -84,7 +84,7 @@ export const pageQuery = graphql`
           title {
             text
           }
-          date(formatString: "DD.MM.YYYY")
+          date(formatString: "MM.DD.YYYY")
           categories {
             category {
               document {

@@ -216,7 +216,7 @@ module.exports = {
   headline: 'Writing and publishing content for LekoArts', // Headline for schema.org JSONLD
   url: 'https://prismic.lekoarts.de', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
-  logo: '/logos/logo-1024.png', // Used for SEO
+  logo: '/logos/subtitlelogo.jpg', // Used for SEO
   ogLanguage: 'en_US', // Facebook Language
 
   // JSONLD / Manifest

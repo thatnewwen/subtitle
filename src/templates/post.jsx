@@ -117,6 +117,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
         desc={data.description}
         node={prismicPost}
         article
+        banner={data.featured_image.localFile.childImageSharp.fluid}
       />
       <Hero>
       <img src={Static} alt="static" className="static" />

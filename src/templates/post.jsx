@@ -117,7 +117,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
         desc={data.description}
         node={prismicPost}
         article
-        banner={data.featured_image.localFile.childImageSharp.fluid}
+        banner={data.featured_image.localFile.childImageSharp.fluid.src}
       />
       <Hero>
       <img src={Static} alt="static" className="static" />
@@ -268,6 +268,7 @@ export const pageQuery = graphql`
               childImageSharp {
                 fluid(maxWidth: 1200, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
+                  src
                 }
               }
             }
